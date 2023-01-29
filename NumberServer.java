@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 
 class Handler implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
@@ -13,6 +14,11 @@ class Handler implements URLHandler {
             if (parameters[0].equals("s")) {
                 words.add(parameters[1]);
             }
+            String[] element = new String[words.size()];
+            for (int i = 0; i < words.size(); i ++) {
+                element[i] = words.get(i);
+            }
+            return element;
         }
         return " ";
     }
